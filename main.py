@@ -18,7 +18,7 @@ async def server_entry_point(request):
     """Entry point for all requests to the server"""
     if 'secret' in request.headers:
       if request.headers['secret'] == '12345':
-        return web.json_response(status=403, data={"message": "well done"})
+        return web.json_response(status=200, data={"message": "well done"})
 
     return web.json_response(status=403, data={"error": "thanks but no thanks"})
 
