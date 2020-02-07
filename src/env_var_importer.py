@@ -10,8 +10,8 @@ import aiohttp
 print("Import Environment Variables")
 
 # load the environment variables if they haven't been loaded yet
-if not os.environ.get('SLACK_URL'):
-    print("Environment variables don't exist. Importing from localhost_test_env_variables.config")
+if not os.environ.get('SECRET'):
+    print("Environment variables don't exist. Importing from local dotenv")
     from dotenv import load_dotenv  # pylint: disable=import-error
     from pathlib import Path
     ENV_PATH = "%s/.env.development" % Path('.')

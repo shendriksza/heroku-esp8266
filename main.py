@@ -17,7 +17,7 @@ import src.slack as Slack
 async def server_entry_point(request):
     """Entry point for all requests to the server"""
     if 'secret' in request.headers:
-      if request.headers['secret'] == '12345':
+      if request.headers['secret'] == os.environ.get('SECRET'):
         return web.json_response(status=200, data={"message": "well done"})
 
     return web.json_response(status=403, data={"error": "thanks but no thanks"})
